@@ -28,6 +28,7 @@ public class TwitterTimeLineCell: UITableViewCell {
             nameLabel.textColor = flag ? .white : .black
             idLabel.textColor = flag ? .white : .black
             tweetLabel.textColor = flag ? .white : .black
+            iconView.layer.borderColor = flag ? UIColor.white.cgColor : UIColor.black.cgColor
         }
     }
     
@@ -71,11 +72,14 @@ public class TwitterTimeLineCell: UITableViewCell {
         nameLabel.text = ""
         idLabel.text = ""
         tweetLabel.text = ""
+        
+        iconView.layer.borderWidth = 1
         //fatalError()
     }
     
     func initDefaults(){
         isDark = false
+        isRound = false
     }
    
 
