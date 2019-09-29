@@ -19,7 +19,26 @@ public class TwitterTimeLineCell: UITableViewCell {
     let bundle = Bundle(for: VideoTableViewCell.self)
     let defaultCellHeight:CGFloat = 76
     
-    var isDark:Bool!
+    public var isDark:Bool!{
+        get{
+            return cellview?.backgroundColor! == .white ? false:true
+        }
+        set(flag){
+            cellview.backgroundColor = flag ? #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1) : .white
+            nameLabel.textColor = flag ? .white : .black
+            idLabel.textColor = flag ? .white : .black
+            tweetLabel.textColor = flag ? .white : .black
+        }
+    }
+    
+    public var isRound:Bool{
+        get{
+            return iconView.clipsToBounds == true ? true:false
+        }
+        set(flag){
+            self.clipIcon(flag: flag)
+        }
+    }
 
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -81,13 +100,14 @@ public class TwitterTimeLineCell: UITableViewCell {
         }
     }
     
-    func setBackColor(){
-        if isDark{
-            cellview.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        }
-        else{
-            
-        }
+    func clipIcon(flag:Bool){
+        //角丸をつけるための設定。falseだと真四角のまま。
+        self.iconView.clipsToBounds = flag
+        //角丸の半径
+        self.iconView.layer.cornerRadius = 3.0
+        //widthの半分にすると、ちょうど真円になる
+        self.iconView.layer.cornerRadius = self.iconView.frame.size.width / 2.0
     }
+    
 }
 
