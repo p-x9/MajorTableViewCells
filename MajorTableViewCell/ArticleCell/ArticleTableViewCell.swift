@@ -27,7 +27,7 @@ class ArticleTableViewCell: UITableViewCell {
     }
     
     private func initView(){
-        let nib = UINib(nibName: "TwitterTimeLineCell", bundle: bundle)
+        let nib = UINib(nibName: "ArticleTableViewCell", bundle: bundle)
         
         cellview = nib.instantiate(withOwner: self, options: nil).first as? UITableViewCell
         
@@ -50,6 +50,8 @@ class ArticleTableViewCell: UITableViewCell {
         titleLabel.text = ""
         detailLabel.text = ""
         authorLabel.text = ""
+        
+        articleImageView.image = UIImage(named: "no-image", in: bundle, compatibleWith: nil)
         
         //fatalError()
     }
