@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class DetailVideoTableViewCell: UITableViewCell {
     
@@ -33,6 +34,32 @@ class DetailVideoTableViewCell: UITableViewCell {
         cellview = nib.instantiate(withOwner: self, options: nil).first as? UITableViewCell
         addSubview(cellview)
         cellview.point(inside: CGPoint(x: 0, y: 0), with: nil)
+    }
+    
+    func setFileAttr(path:String){
+        self.setVideoData(path: path)
+        self.setVideoDate(path: path)
+        self.setVideoLength(path: path)
+    }
+    
+    private func setVideoLength(path:String){
+        let asset = AVAsset(url: URL(fileURLWithPath: path))
+        let videoLength = asset.tracks(withMediaType: .video).first?.timeRange.duration.seconds
+        self.lengthLabel.text = String(format: "%02d", Int(videoLength!/60))+":"+String(format: "%02d", Int(videoLength!) % 60)
+    }
+    
+    private func setVideoDate(path:String){
+        let fileAttr = try! FileManager.default.attributesOfItem(atPath: path)
+        let date:Date = fileAttr[.creationDate]! as! Date
+        let f = DateFormatter()
+        f.timeStyle = .long
+        f.dateStyle = .medium
+        f.locale = Locale(identifier: "ja_JP")
+        self.dateLabel.text = f.string(from: date)
+    }
+    private func setVideoData(path:String){
+        let fileAttr = try! FileManager.default.attributesOfItem(atPath: path)
+        self.dataLabel.text = String(format: "%3.2f", Double(fileAttr[.size]!as!Double / 1000000))+" Mbyte"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
