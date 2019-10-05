@@ -44,6 +44,9 @@ class DetailVideoTableViewCell: UITableViewCell {
     func setThumbnail(path:String){
         thumbnailView.image = getImage(path: path)
     }
+    func setThumbnail(url:String){
+        thumbnailView.image = getImage(url: url)
+    }
     
     private func setVideoLength(path:String){
         let asset = AVAsset(url: URL(fileURLWithPath: path))
@@ -70,6 +73,16 @@ class DetailVideoTableViewCell: UITableViewCell {
             return nil
         }
         return image
+    }
+    private func getImage(url:String)->UIImage?{
+       let url = URL(string: url)
+       do {
+           let data = try Data(contentsOf: url!)
+           return UIImage(data: data)!
+       } catch let err {
+           print("Error : \(err.localizedDescription)")
+       }
+       return nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

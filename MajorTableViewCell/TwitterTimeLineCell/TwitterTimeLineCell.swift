@@ -82,15 +82,31 @@ public class TwitterTimeLineCell: UITableViewCell {
         isRound = false
     }
     
-    func setThumbnail(path:String){
+    func setIcon(path:String){
         iconView.image = getImage(path: path)
     }
+    
+    func setIcon(url:String){
+        iconView.image = getImage(url: url)
+    }
+    
     
     private func getImage(path:String)->UIImage?{
         guard let image = UIImage(contentsOfFile: path)else{
             return nil
         }
         return image
+    }
+    
+    private func getImage(url:String)->UIImage?{
+       let url = URL(string: url)
+       do {
+           let data = try Data(contentsOf: url!)
+           return UIImage(data: data)!
+       } catch let err {
+           print("Error : \(err.localizedDescription)")
+       }
+       return nil
     }
    
 
