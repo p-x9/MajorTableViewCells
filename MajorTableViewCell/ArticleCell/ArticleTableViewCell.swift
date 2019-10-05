@@ -55,6 +55,16 @@ class ArticleTableViewCell: UITableViewCell {
         
         //fatalError()
     }
+    func setThumbnail(path:String){
+        articleImageView.image = getImage(path: path)
+    }
+    
+    private func getImage(path:String)->UIImage?{
+        guard let image = UIImage(contentsOfFile: path)else{
+            return nil
+        }
+        return image
+    }
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "text"{

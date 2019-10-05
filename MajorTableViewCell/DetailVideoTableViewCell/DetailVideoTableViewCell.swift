@@ -41,6 +41,9 @@ class DetailVideoTableViewCell: UITableViewCell {
         self.setVideoDate(path: path)
         self.setVideoLength(path: path)
     }
+    func setThumbnail(path:String){
+        thumbnailView.image = getImage(path: path)
+    }
     
     private func setVideoLength(path:String){
         let asset = AVAsset(url: URL(fileURLWithPath: path))
@@ -60,6 +63,13 @@ class DetailVideoTableViewCell: UITableViewCell {
     private func setVideoData(path:String){
         let fileAttr = try! FileManager.default.attributesOfItem(atPath: path)
         self.dataLabel.text = String(format: "%3.2f", Double(fileAttr[.size]!as!Double / 1000000))+" Mbyte"
+    }
+    
+    private func getImage(path:String)->UIImage?{
+        guard let image = UIImage(contentsOfFile: path)else{
+            return nil
+        }
+        return image
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

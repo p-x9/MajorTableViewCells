@@ -48,6 +48,17 @@ public class VideoTableViewCell: UITableViewCell {
         detailLabel.text = ""
         thumbnailView.image = UIImage(named: "no-image", in: bundle, compatibleWith: nil)
     }
+    
+    func setThumbnail(path:String){
+        thumbnailView.image = getImage(path: path)
+    }
+    
+    private func getImage(path:String)->UIImage?{
+        guard let image = UIImage(contentsOfFile: path)else{
+            return nil
+        }
+        return image
+    }
 
     override public func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

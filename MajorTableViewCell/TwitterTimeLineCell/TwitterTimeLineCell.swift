@@ -77,9 +77,20 @@ public class TwitterTimeLineCell: UITableViewCell {
         //fatalError()
     }
     
-    func initDefaults(){
+    private func initDefaults(){
         isDark = false
         isRound = false
+    }
+    
+    func setThumbnail(path:String){
+        iconView.image = getImage(path: path)
+    }
+    
+    private func getImage(path:String)->UIImage?{
+        guard let image = UIImage(contentsOfFile: path)else{
+            return nil
+        }
+        return image
     }
    
 
@@ -104,7 +115,7 @@ public class TwitterTimeLineCell: UITableViewCell {
         }
     }
     
-    func clipIcon(flag:Bool){
+    private func clipIcon(flag:Bool){
         //角丸をつけるための設定。falseだと真四角のまま。
         self.iconView.clipsToBounds = flag
         //角丸の半径
