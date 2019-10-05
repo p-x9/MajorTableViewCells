@@ -19,6 +19,8 @@
 		4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */; };
 		4245012B2341A3C600023D48 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424501292341A3C600023D48 /* SwitchTableViewCell.swift */; };
 		4245012C2341A3C600023D48 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245012A2341A3C600023D48 /* SwitchTableViewCell.xib */; };
+		42B6FE7F2348E16A0000EA2E /* DetailVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6FE7D2348E16A0000EA2E /* DetailVideoTableViewCell.swift */; };
+		42B6FE802348E16A0000EA2E /* DetailVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B6FE7E2348E16A0000EA2E /* DetailVideoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTagTableViewCell.xib; sourceTree = "<group>"; };
 		424501292341A3C600023D48 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		4245012A2341A3C600023D48 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		42B6FE7D2348E16A0000EA2E /* DetailVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVideoTableViewCell.swift; sourceTree = "<group>"; };
+		42B6FE7E2348E16A0000EA2E /* DetailVideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVideoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			children = (
 				4245006E234073A400023D48 /* MajorTableViewCell.h */,
 				424501152340E75F00023D48 /* Media.xcassets */,
+				42B6FE7C2348E13C0000EA2E /* DetailVideoTableViewCell */,
 				424501282341A39F00023D48 /* SwitchTableViewCell */,
 				4245012323419C2600023D48 /* ColorTagTableViewCell */,
 				4245011E23416A1B00023D48 /* ArticleCell */,
@@ -123,6 +128,15 @@
 				4245012A2341A3C600023D48 /* SwitchTableViewCell.xib */,
 			);
 			path = SwitchTableViewCell;
+			sourceTree = "<group>";
+		};
+		42B6FE7C2348E13C0000EA2E /* DetailVideoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				42B6FE7D2348E16A0000EA2E /* DetailVideoTableViewCell.swift */,
+				42B6FE7E2348E16A0000EA2E /* DetailVideoTableViewCell.xib */,
+			);
+			path = DetailVideoTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,7 @@
 			files = (
 				4245012223416A4A00023D48 /* ArticleTableViewCell.xib in Resources */,
 				424501162340E75F00023D48 /* Media.xcassets in Resources */,
+				42B6FE802348E16A0000EA2E /* DetailVideoTableViewCell.xib in Resources */,
 				4245011B2340ECD300023D48 /* TwitterTimeLineCell.xib in Resources */,
 				4245012C2341A3C600023D48 /* SwitchTableViewCell.xib in Resources */,
 				4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */,
@@ -213,6 +228,7 @@
 			files = (
 				4245012623419C6B00023D48 /* ColorTagTableViewCell.swift in Sources */,
 				4245011A2340ECD300023D48 /* TwitterTimeLineCell.swift in Sources */,
+				42B6FE7F2348E16A0000EA2E /* DetailVideoTableViewCell.swift in Sources */,
 				4245012B2341A3C600023D48 /* SwitchTableViewCell.swift in Sources */,
 				4245012123416A4A00023D48 /* ArticleTableViewCell.swift in Sources */,
 				4245007A23407FCA00023D48 /* VideoTableViewCell.swift in Sources */,
