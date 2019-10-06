@@ -12,7 +12,6 @@ class FormTableViewCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var formTextField: UITextField!
-    var forms = [Int:String]()
     
     var cellview: UITableViewCell!
     let bundle = Bundle(for: VideoTableViewCell.self)
@@ -22,9 +21,6 @@ class FormTableViewCell: UITableViewCell {
         super.awakeFromNib()
         initView()
         // Initialization code
-    }
-    override func layoutIfNeeded() {
-        formTextField.text = forms[tag]
     }
     
     private func initView(){
@@ -43,7 +39,6 @@ class FormTableViewCell: UITableViewCell {
     @IBAction func editTextField(_ sender: Any){//キーボード用
     }
     @IBAction func endTextField(_ sender: Any) {
-        forms.updateValue(formTextField.text ?? "", forKey: tag)
     }
     
     
