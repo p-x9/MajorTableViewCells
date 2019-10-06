@@ -23,6 +23,9 @@ class FormTableViewCell: UITableViewCell {
         initView()
         // Initialization code
     }
+    override func layoutIfNeeded() {
+        formTextField.text = forms[tag]
+    }
     
     private func initView(){
         let nib = UINib(nibName: "FormTableViewCell", bundle: bundle)
