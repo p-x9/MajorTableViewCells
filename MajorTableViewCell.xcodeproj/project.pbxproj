@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422B34702349D564001BC553 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B346E2349D564001BC553 /* FormTableViewCell.swift */; };
+		422B34712349D564001BC553 /* FormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422B346F2349D564001BC553 /* FormTableViewCell.xib */; };
 		42450070234073A400023D48 /* MajorTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4245006E234073A400023D48 /* MajorTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4245007A23407FCA00023D48 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245007823407FCA00023D48 /* VideoTableViewCell.swift */; };
 		4245007B23407FCA00023D48 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245007923407FCA00023D48 /* VideoTableViewCell.xib */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		422B346E2349D564001BC553 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
+		422B346F2349D564001BC553 /* FormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormTableViewCell.xib; sourceTree = "<group>"; };
 		4245006B234073A400023D48 /* MajorTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MajorTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4245006E234073A400023D48 /* MajorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MajorTableViewCell.h; sourceTree = "<group>"; };
 		4245006F234073A400023D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		422B346D2349D53C001BC553 /* FormTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				422B346E2349D564001BC553 /* FormTableViewCell.swift */,
+				422B346F2349D564001BC553 /* FormTableViewCell.xib */,
+			);
+			path = FormTableViewCell;
+			sourceTree = "<group>";
+		};
 		42450061234073A400023D48 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +87,7 @@
 			children = (
 				4245006E234073A400023D48 /* MajorTableViewCell.h */,
 				424501152340E75F00023D48 /* Media.xcassets */,
+				422B346D2349D53C001BC553 /* FormTableViewCell */,
 				42B6FE7C2348E13C0000EA2E /* DetailVideoTableViewCell */,
 				424501282341A39F00023D48 /* SwitchTableViewCell */,
 				4245012323419C2600023D48 /* ColorTagTableViewCell */,
@@ -214,6 +228,7 @@
 				42B6FE802348E16A0000EA2E /* DetailVideoTableViewCell.xib in Resources */,
 				4245011B2340ECD300023D48 /* TwitterTimeLineCell.xib in Resources */,
 				4245012C2341A3C600023D48 /* SwitchTableViewCell.xib in Resources */,
+				422B34712349D564001BC553 /* FormTableViewCell.xib in Resources */,
 				4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */,
 				4245007B23407FCA00023D48 /* VideoTableViewCell.xib in Resources */,
 			);
@@ -232,6 +247,7 @@
 				4245012B2341A3C600023D48 /* SwitchTableViewCell.swift in Sources */,
 				4245012123416A4A00023D48 /* ArticleTableViewCell.swift in Sources */,
 				4245007A23407FCA00023D48 /* VideoTableViewCell.swift in Sources */,
+				422B34702349D564001BC553 /* FormTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
