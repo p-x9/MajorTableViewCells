@@ -19,6 +19,7 @@ class SwitchTableViewCell: UITableViewCell {
         super.awakeFromNib()
         initView()
         selectSwitch.isOn = false
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
         // Initialization code
     }
     

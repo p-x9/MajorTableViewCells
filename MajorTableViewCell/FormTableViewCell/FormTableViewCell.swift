@@ -20,6 +20,7 @@ class FormTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         initView()
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
         // Initialization code
     }
     
