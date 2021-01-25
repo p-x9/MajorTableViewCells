@@ -8,12 +8,12 @@
 
 import UIKit
 
-class SwitchTableViewCell: UITableViewCell {
+public class SwitchTableViewCell: UITableViewCell {
     
-    var cellSwitch: UISwitch!
-    var switchChangedhHandelr:((UISwitch)->Void)?
+    public var cellSwitch: UISwitch!
+    public var switchChangedhHandelr:((UISwitch)->Void)?
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         cellSwitch = UISwitch()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -29,7 +29,7 @@ class SwitchTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
