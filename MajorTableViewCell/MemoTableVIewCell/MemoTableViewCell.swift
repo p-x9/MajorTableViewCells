@@ -15,7 +15,7 @@ class MemoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.contentView.addSubview(memoView)
-        self.selectionStyle = UITableViewCell.SelectionStyle.none
+        self.selectionStyle = .none
     }
     
     override func layoutIfNeeded() {

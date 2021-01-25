@@ -21,7 +21,6 @@
 		4245012623419C6B00023D48 /* ColorTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245012423419C6B00023D48 /* ColorTagTableViewCell.swift */; };
 		4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */; };
 		4245012B2341A3C600023D48 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424501292341A3C600023D48 /* SwitchTableViewCell.swift */; };
-		4245012C2341A3C600023D48 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245012A2341A3C600023D48 /* SwitchTableViewCell.xib */; };
 		42B6FE7F2348E16A0000EA2E /* DetailVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6FE7D2348E16A0000EA2E /* DetailVideoTableViewCell.swift */; };
 		42B6FE802348E16A0000EA2E /* DetailVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B6FE7E2348E16A0000EA2E /* DetailVideoTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -43,7 +42,6 @@
 		4245012423419C6B00023D48 /* ColorTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagTableViewCell.swift; sourceTree = "<group>"; };
 		4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTagTableViewCell.xib; sourceTree = "<group>"; };
 		424501292341A3C600023D48 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
-		4245012A2341A3C600023D48 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		42B6FE7D2348E16A0000EA2E /* DetailVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVideoTableViewCell.swift; sourceTree = "<group>"; };
 		42B6FE7E2348E16A0000EA2E /* DetailVideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVideoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				424501292341A3C600023D48 /* SwitchTableViewCell.swift */,
-				4245012A2341A3C600023D48 /* SwitchTableViewCell.xib */,
 			);
 			path = SwitchTableViewCell;
 			sourceTree = "<group>";
@@ -238,7 +235,6 @@
 				424501162340E75F00023D48 /* Media.xcassets in Resources */,
 				42B6FE802348E16A0000EA2E /* DetailVideoTableViewCell.xib in Resources */,
 				4245011B2340ECD300023D48 /* TwitterTimeLineCell.xib in Resources */,
-				4245012C2341A3C600023D48 /* SwitchTableViewCell.xib in Resources */,
 				422B34712349D564001BC553 /* FormTableViewCell.xib in Resources */,
 				4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */,
 				4245007B23407FCA00023D48 /* VideoTableViewCell.xib in Resources */,

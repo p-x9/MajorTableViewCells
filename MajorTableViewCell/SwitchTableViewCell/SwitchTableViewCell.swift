@@ -10,31 +10,35 @@ import UIKit
 
 class SwitchTableViewCell: UITableViewCell {
     
-    @IBOutlet var selectSwitch: UISwitch!
-    
-    var cellview: UITableViewCell!
-    let bundle = Bundle(for: VideoTableViewCell.self)
+    var cellSwitch: UISwitch!
+    var switchChangedhHandelr:((UISwitch)->Void)?
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        initView()
-        selectSwitch.isOn = false
-        self.selectionStyle = UITableViewCell.SelectionStyle.none
-        // Initialization code
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        
+        cellSwitch = UISwitch()
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        cellSwitch.isOn = false
+        cellSwitch.addTarget(self, action: #selector(switchChanged(_:)), for: .valueChanged)
+        
+        self.accessoryView = self.cellSwitch
+        self.selectionStyle = .none
     }
     
-    private func initView(){
-        let nib = UINib(nibName: "ColorTagTableViewCell", bundle: bundle)
-        
-        cellview = nib.instantiate(withOwner: self, options: nil).first as? UITableViewCell
-        addSubview(cellview)
-        cellview.point(inside: CGPoint(x: 0, y: 0), with: nil)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @objc private func switchChanged(_ sender: Any) {
+        if let handler = self.switchChangedhHandelr{
+            handler(self.cellSwitch)
+        }
     }
     
 }
