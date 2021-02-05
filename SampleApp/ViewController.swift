@@ -48,7 +48,13 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             return cell
         case (0,1):
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(MemoTableViewCell.self)", for: indexPath) as! MemoTableViewCell
-            cell.memoView.text = "adasasdsddadsdadaasda\nadsadasd"
+            cell.memoView.text = "hello\nI'm fine."
+            cell.editingStartHandler = {()->Void in
+                print("edit start")
+            }
+            cell.memoChangedHandler = {text in
+                print("text updated :\(text)")
+            }
             return cell
         default:
             return UITableViewCell()
