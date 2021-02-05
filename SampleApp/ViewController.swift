@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         
         self.tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: "\(SwitchTableViewCell.self)")
+        self.tableView.register(MemoTableViewCell.self, forCellReuseIdentifier: "\(MemoTableViewCell.self)")
     }
 
 
@@ -44,6 +45,10 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             cell.switchChangedhHandelr = {cellswitch in
                 print("value changed:\(cell.cellSwitch.isOn)")
             }
+            return cell
+        case (0,1):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(MemoTableViewCell.self)", for: indexPath) as! MemoTableViewCell
+            cell.memoView.text = "adasasdsddadsdadaasda\nadsadasd"
             return cell
         default:
             return UITableViewCell()
