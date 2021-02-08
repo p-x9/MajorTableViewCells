@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		422B34702349D564001BC553 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B346E2349D564001BC553 /* FormTableViewCell.swift */; };
-		422B34712349D564001BC553 /* FormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422B346F2349D564001BC553 /* FormTableViewCell.xib */; };
 		422B3474234A5C29001BC553 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B3473234A5C29001BC553 /* MemoTableViewCell.swift */; };
 		4244908025BF171500F2CD71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4244907F25BF171500F2CD71 /* AppDelegate.swift */; };
 		4244908225BF171500F2CD71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4244908125BF171500F2CD71 /* SceneDelegate.swift */; };
@@ -52,7 +51,6 @@
 
 /* Begin PBXFileReference section */
 		422B346E2349D564001BC553 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
-		422B346F2349D564001BC553 /* FormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormTableViewCell.xib; sourceTree = "<group>"; };
 		422B3473234A5C29001BC553 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 		4244907D25BF171500F2CD71 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4244907F25BF171500F2CD71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				422B346E2349D564001BC553 /* FormTableViewCell.swift */,
-				422B346F2349D564001BC553 /* FormTableViewCell.xib */,
 			);
 			path = FormTableViewCell;
 			sourceTree = "<group>";
@@ -425,7 +422,6 @@
 				424501162340E75F00023D48 /* Media.xcassets in Resources */,
 				42B6FE802348E16A0000EA2E /* DetailVideoTableViewCell.xib in Resources */,
 				4245011B2340ECD300023D48 /* TwitterTimeLineCell.xib in Resources */,
-				422B34712349D564001BC553 /* FormTableViewCell.xib in Resources */,
 				4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */,
 				4245007B23407FCA00023D48 /* VideoTableViewCell.xib in Resources */,
 			);

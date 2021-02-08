@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         
         self.tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: "\(SwitchTableViewCell.self)")
         self.tableView.register(MemoTableViewCell.self, forCellReuseIdentifier: "\(MemoTableViewCell.self)")
+        self.tableView.register(FormTableViewCell.self, forCellReuseIdentifier: "\(FormTableViewCell.self)")
     }
 
 
@@ -54,6 +55,17 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             }
             cell.memoChangedHandler = {text in
                 print("text updated :\(text)")
+            }
+            return cell
+        case (0,2):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(FormTableViewCell.self)", for: indexPath) as! FormTableViewCell
+            cell.titleLabel.text = "title"
+            cell.formTextField.text = "test"
+            cell.editingStartHandler = {()->Void in
+                print("edit start")
+            }
+            cell.changeTextFieldhandler = {text in
+                print("value changed:\(text)")
             }
             return cell
         default:
