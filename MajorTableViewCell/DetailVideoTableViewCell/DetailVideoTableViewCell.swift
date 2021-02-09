@@ -9,31 +9,51 @@
 import UIKit
 import AVKit
 
-class DetailVideoTableViewCell: UITableViewCell {
+public class DetailVideoTableViewCell: UITableViewCell {
     
-    @IBOutlet var thumbnailView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var authorLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var lengthLabel: UILabel!
-    @IBOutlet var dataLabel: UILabel!
-    
-    var cellview: UITableViewCell!
-    let bundle = Bundle(for: VideoTableViewCell.self)
-    
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        initView()
-        // Initialization code
+    public var thumbnailView: UIImageView{
+        videoContentView.thumbnailView
+    }
+    public var titleLabel: UILabel{
+        videoContentView.titleLabel
+    }
+    public var authorLabel: UILabel{
+        videoContentView.authorLabel
+    }
+    public var dateLabel: UILabel{
+        videoContentView.dateLabel
+    }
+    public var lengthLabel: UILabel{
+        videoContentView.lengthLabel
+    }
+    public var dataLabel: UILabel{
+        videoContentView.dataLabel
     }
     
-    private func initView(){
-        let nib = UINib(nibName: "DetailVideoTableViewCell", bundle: bundle)
+    private let bundle = Bundle(for: DetailVideoTableViewCell.self)
+    private var videoContentView: DetailVideoContentView!
+
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        cellview = nib.instantiate(withOwner: self, options: nil).first as? UITableViewCell
-        addSubview(cellview)
-        cellview.point(inside: CGPoint(x: 0, y: 0), with: nil)
+        self.videoContentView = DetailVideoContentView()
+        self.videoContentView.frame = self.contentView.bounds
+        self.contentView.addSubview(self.videoContentView)
+        
+        videoContentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addConstraints([
+            NSLayoutConstraint.init(item: self, attribute: .leading, relatedBy: .equal, toItem: videoContentView, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .trailing, relatedBy: .equal, toItem: videoContentView, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .top, relatedBy: .equal, toItem: videoContentView, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .bottom, relatedBy:.equal, toItem: videoContentView, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .width, relatedBy:.equal, toItem: videoContentView, attribute: .width, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .height, relatedBy:.equal, toItem: videoContentView, attribute: .height, multiplier: 1, constant: 0),
+        ])
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setFileAttr(path:String){
@@ -85,7 +105,7 @@ class DetailVideoTableViewCell: UITableViewCell {
        return nil
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

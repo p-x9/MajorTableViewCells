@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         self.tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: "\(SwitchTableViewCell.self)")
         self.tableView.register(MemoTableViewCell.self, forCellReuseIdentifier: "\(MemoTableViewCell.self)")
         self.tableView.register(FormTableViewCell.self, forCellReuseIdentifier: "\(FormTableViewCell.self)")
+        self.tableView.register(DetailVideoTableViewCell.self, forCellReuseIdentifier: "\(DetailVideoTableViewCell.self)")
     }
 
 
@@ -31,7 +32,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 3
+            return 4
         default:
             return 0
         }
@@ -68,8 +69,30 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
                 print("value changed:\(text)")
             }
             return cell
+        case (0,3):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailVideoTableViewCell.self)", for: indexPath) as! DetailVideoTableViewCell
+            cell.authorLabel.text = "author"
+            cell.dataLabel.text = "data"
+            cell.titleLabel.text = "title"
+            cell.dateLabel.text = "date"
+            cell.lengthLabel.text = "length"
+            cell.thumbnailView.image = .actions
+            
+            return cell
         default:
             return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch (indexPath.section,indexPath.row) {
+        case (0,1):
+            return 120
+        case (0,3):
+            return 80
+        default:
+            tableView.estimatedRowHeight = 60
+            return UITableView.automaticDimension
         }
     }
     

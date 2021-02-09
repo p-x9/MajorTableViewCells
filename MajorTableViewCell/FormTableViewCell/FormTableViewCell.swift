@@ -16,9 +16,12 @@ public class FormTableViewCell: UITableViewCell {
     public var changeTextFieldhandler: ((String)->Void)?
     public var editingStartHandler:(()->Void)?
     
+    private let toolBar:UIToolbar
+    
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.titleLabel = UILabel.init()
         self.formTextField = UITextField.init()
+        self.toolBar = UIToolbar(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -49,6 +52,13 @@ public class FormTableViewCell: UITableViewCell {
 //        self.formTextField.layer.borderWidth = 1
 //        self.titleLabel.layer.borderWidth = 1
 //        self.titleLabel.layer.borderColor = UIColor.red.cgColor
+        
+        toolBar.sizeToFit()
+        let toolBarBtn = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(done(_:)))
+        let flexibleBarBtn = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        toolBar.items = [flexibleBarBtn,toolBarBtn]
+        
+        self.formTextField.inputAccessoryView = toolBar
         
         self.selectionStyle = .none
     }
@@ -81,6 +91,10 @@ public class FormTableViewCell: UITableViewCell {
         if let handler = self.editingStartHandler{
             handler()
         }
+    }
+    
+    @objc func done(_: UIBarButtonItem){
+        self.formTextField.resignFirstResponder()
     }
 }
 

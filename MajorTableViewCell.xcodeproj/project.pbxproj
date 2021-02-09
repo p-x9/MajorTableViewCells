@@ -28,8 +28,11 @@
 		4245012623419C6B00023D48 /* ColorTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245012423419C6B00023D48 /* ColorTagTableViewCell.swift */; };
 		4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */; };
 		4245012B2341A3C600023D48 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424501292341A3C600023D48 /* SwitchTableViewCell.swift */; };
+		426B67AF25D1883800C1FC2B /* DetailVideoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B67AE25D1883800C1FC2B /* DetailVideoContentView.swift */; };
+		426B67B525D1885D00C1FC2B /* DetailVideoContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426B67B425D1885D00C1FC2B /* DetailVideoContentView.xib */; };
+		426B67BF25D2D88100C1FC2B /* MajorTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4245006B234073A400023D48 /* MajorTableViewCell.framework */; };
+		426B67C025D2D88100C1FC2B /* MajorTableViewCell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4245006B234073A400023D48 /* MajorTableViewCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42B6FE7F2348E16A0000EA2E /* DetailVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6FE7D2348E16A0000EA2E /* DetailVideoTableViewCell.swift */; };
-		42B6FE802348E16A0000EA2E /* DetailVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B6FE7E2348E16A0000EA2E /* DetailVideoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +50,28 @@
 			remoteGlobalIDString = 4244907C25BF171500F2CD71;
 			remoteInfo = SampleApp;
 		};
+		426B67C125D2D88100C1FC2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42450062234073A400023D48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4245006A234073A400023D48;
+			remoteInfo = MajorTableViewCell;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		426B67C325D2D88100C1FC2B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				426B67C025D2D88100C1FC2B /* MajorTableViewCell.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		422B346E2349D564001BC553 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
@@ -79,8 +103,9 @@
 		4245012423419C6B00023D48 /* ColorTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagTableViewCell.swift; sourceTree = "<group>"; };
 		4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTagTableViewCell.xib; sourceTree = "<group>"; };
 		424501292341A3C600023D48 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		426B67AE25D1883800C1FC2B /* DetailVideoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVideoContentView.swift; sourceTree = "<group>"; };
+		426B67B425D1885D00C1FC2B /* DetailVideoContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVideoContentView.xib; sourceTree = "<group>"; };
 		42B6FE7D2348E16A0000EA2E /* DetailVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVideoTableViewCell.swift; sourceTree = "<group>"; };
-		42B6FE7E2348E16A0000EA2E /* DetailVideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVideoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426B67BF25D2D88100C1FC2B /* MajorTableViewCell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +197,7 @@
 				4244909525BF171600F2CD71 /* SampleAppTests */,
 				424490A025BF171700F2CD71 /* SampleAppUITests */,
 				4245006C234073A400023D48 /* Products */,
+				426B67BE25D2D88100C1FC2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,11 +274,19 @@
 			path = SwitchTableViewCell;
 			sourceTree = "<group>";
 		};
+		426B67BE25D2D88100C1FC2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		42B6FE7C2348E13C0000EA2E /* DetailVideoTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				42B6FE7D2348E16A0000EA2E /* DetailVideoTableViewCell.swift */,
-				42B6FE7E2348E16A0000EA2E /* DetailVideoTableViewCell.xib */,
+				426B67AE25D1883800C1FC2B /* DetailVideoContentView.swift */,
+				426B67B425D1885D00C1FC2B /* DetailVideoContentView.xib */,
 			);
 			path = DetailVideoTableViewCell;
 			sourceTree = "<group>";
@@ -277,10 +312,12 @@
 				4244907925BF171500F2CD71 /* Sources */,
 				4244907A25BF171500F2CD71 /* Frameworks */,
 				4244907B25BF171500F2CD71 /* Resources */,
+				426B67C325D2D88100C1FC2B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				426B67C225D2D88100C1FC2B /* PBXTargetDependency */,
 			);
 			name = SampleApp;
 			productName = SampleApp;
@@ -418,9 +455,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426B67B525D1885D00C1FC2B /* DetailVideoContentView.xib in Resources */,
 				4245012223416A4A00023D48 /* ArticleTableViewCell.xib in Resources */,
 				424501162340E75F00023D48 /* Media.xcassets in Resources */,
-				42B6FE802348E16A0000EA2E /* DetailVideoTableViewCell.xib in Resources */,
 				4245011B2340ECD300023D48 /* TwitterTimeLineCell.xib in Resources */,
 				4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */,
 				4245007B23407FCA00023D48 /* VideoTableViewCell.xib in Resources */,
@@ -464,6 +501,7 @@
 				4245011A2340ECD300023D48 /* TwitterTimeLineCell.swift in Sources */,
 				42B6FE7F2348E16A0000EA2E /* DetailVideoTableViewCell.swift in Sources */,
 				422B3474234A5C29001BC553 /* MemoTableViewCell.swift in Sources */,
+				426B67AF25D1883800C1FC2B /* DetailVideoContentView.swift in Sources */,
 				4245012B2341A3C600023D48 /* SwitchTableViewCell.swift in Sources */,
 				4245012123416A4A00023D48 /* ArticleTableViewCell.swift in Sources */,
 				4245007A23407FCA00023D48 /* VideoTableViewCell.swift in Sources */,
@@ -483,6 +521,11 @@
 			isa = PBXTargetDependency;
 			target = 4244907C25BF171500F2CD71 /* SampleApp */;
 			targetProxy = 4244909E25BF171700F2CD71 /* PBXContainerItemProxy */;
+		};
+		426B67C225D2D88100C1FC2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4245006A234073A400023D48 /* MajorTableViewCell */;
+			targetProxy = 426B67C125D2D88100C1FC2B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
