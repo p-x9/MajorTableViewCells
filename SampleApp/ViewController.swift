@@ -44,7 +44,10 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         switch (indexPath.section,indexPath.row) {
         case (0,0):
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(SwitchTableViewCell.self)", for: indexPath) as! SwitchTableViewCell
-            cell.textLabel?.text = "title"
+            cell.textLabel?.text = "Wi-Fi"
+            cell.imageView?.image = UIImage(systemName:"wifi")
+            cell.imageView!.layer.cornerRadius = cell.imageView!.frame.height/2
+            cell.imageView?.layer.borderWidth = 0.1
             cell.cellSwitch.isOn = true
             cell.switchChangedhHandelr = {cellswitch in
                 print("value changed:\(cell.cellSwitch.isOn)")
@@ -62,8 +65,8 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             return cell
         case (0,2):
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(FormTableViewCell.self)", for: indexPath) as! FormTableViewCell
-            cell.titleLabel.text = "title"
-            cell.formTextField.text = "test"
+            cell.titleLabel.text = "Name"
+            cell.formTextField.placeholder = "enter your name"
             cell.editingStartHandler = {()->Void in
                 print("edit start")
             }
@@ -73,23 +76,23 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             return cell
         case (0,3):
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailVideoTableViewCell.self)", for: indexPath) as! DetailVideoTableViewCell
-            cell.authorLabel.text = "author"
-            cell.dataLabel.text = "data"
-            cell.titleLabel.text = "title"
-            cell.dateLabel.text = "date"
-            cell.lengthLabel.text = "length"
-            cell.thumbnailView.image = .actions
+            cell.authorLabel.text = "Apple"
+            cell.dataLabel.text = "248 MByte"
+            cell.titleLabel.text = "Apple Event — October 13"
+            cell.dateLabel.text = "2020/10/14"
+            cell.lengthLabel.text = "1:10:58"
+            cell.thumbnailView.image = UIImage.init(named: "videoThumbnail")
             return cell
         case (0,4):
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(ArticleTableViewCell.self)", for: indexPath) as! ArticleTableViewCell
-            cell.articleImageView.image = .add
+            cell.articleImageView.image = UIImage(named: "swift")
             cell.titleLabel.text = "[Swift] RxSwift入門-主なUIアーキテクチャの説明"
             cell.authorLabel.text = "author"
             cell.dateLabel.text = "\(Date())"
             return cell
         case (0,5):
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(TwitterTimeLineCell.self)", for: indexPath) as! TwitterTimeLineCell
-            cell.iconView.image = .actions
+            cell.iconView.image = UIImage.init(named: "twiIcon")
             cell.idLabel.text = "@NSA"
             cell.nameLabel.text = "NSA"
             cell.tweetLabel.text = "A software reverse engineering (SRE) suite of tools developed by NSA's Research Directorate in support of the Cybersecurity mission"
