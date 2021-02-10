@@ -50,6 +50,8 @@ public class DetailVideoTableViewCell: UITableViewCell {
             NSLayoutConstraint.init(item: self, attribute: .width, relatedBy:.equal, toItem: videoContentView, attribute: .width, multiplier: 1, constant: 0),
             NSLayoutConstraint.init(item: self, attribute: .height, relatedBy:.equal, toItem: videoContentView, attribute: .height, multiplier: 1, constant: 0),
         ])
+        
+        self.selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {

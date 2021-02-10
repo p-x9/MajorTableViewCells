@@ -26,7 +26,6 @@
 		4245011A2340ECD300023D48 /* TwitterTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424501182340ECD300023D48 /* TwitterTimeLineCell.swift */; };
 		4245011B2340ECD300023D48 /* TwitterTimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424501192340ECD300023D48 /* TwitterTimeLineCell.xib */; };
 		4245012123416A4A00023D48 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245011F23416A4A00023D48 /* ArticleTableViewCell.swift */; };
-		4245012223416A4A00023D48 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245012023416A4A00023D48 /* ArticleTableViewCell.xib */; };
 		4245012623419C6B00023D48 /* ColorTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245012423419C6B00023D48 /* ColorTagTableViewCell.swift */; };
 		4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */; };
 		4245012B2341A3C600023D48 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424501292341A3C600023D48 /* SwitchTableViewCell.swift */; };
@@ -103,7 +102,6 @@
 		424501182340ECD300023D48 /* TwitterTimeLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTimeLineCell.swift; sourceTree = "<group>"; };
 		424501192340ECD300023D48 /* TwitterTimeLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterTimeLineCell.xib; sourceTree = "<group>"; };
 		4245011F23416A4A00023D48 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
-		4245012023416A4A00023D48 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		4245012423419C6B00023D48 /* ColorTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagTableViewCell.swift; sourceTree = "<group>"; };
 		4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTagTableViewCell.xib; sourceTree = "<group>"; };
 		424501292341A3C600023D48 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				4245011F23416A4A00023D48 /* ArticleTableViewCell.swift */,
-				4245012023416A4A00023D48 /* ArticleTableViewCell.xib */,
 				421CB0CE25D3FFE5001CA591 /* ArticleContentView.xib */,
 				421CB0D325D40378001CA591 /* ArticleContentView.swift */,
 			);
@@ -463,7 +460,6 @@
 			files = (
 				421CB0CF25D3FFE5001CA591 /* ArticleContentView.xib in Resources */,
 				426B67B525D1885D00C1FC2B /* DetailVideoContentView.xib in Resources */,
-				4245012223416A4A00023D48 /* ArticleTableViewCell.xib in Resources */,
 				424501162340E75F00023D48 /* Media.xcassets in Resources */,
 				4245011B2340ECD300023D48 /* TwitterTimeLineCell.xib in Resources */,
 				4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */,

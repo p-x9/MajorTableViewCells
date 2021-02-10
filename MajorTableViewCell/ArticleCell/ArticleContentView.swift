@@ -42,6 +42,12 @@ final public class ArticleContentView: UIView {
     
     private func configureView() {
         loadNib()
+        
+        titleLabel.text = ""
+        authorLabel.text = ""
+        dateLabel.text = ""
+        
+        imageView.image = UIImage(named: "no-image", in: Bundle(for: ArticleTableViewCell.self), compatibleWith: nil)
     }
     
     private func loadNib() {
@@ -57,8 +63,6 @@ final public class ArticleContentView: UIView {
             NSLayoutConstraint.init(item: self, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0),
             NSLayoutConstraint.init(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0),
             NSLayoutConstraint.init(item: self, attribute: .bottom, relatedBy:.equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
-            NSLayoutConstraint.init(item: self, attribute: .width, relatedBy:.equal, toItem: view, attribute: .width, multiplier: 1, constant: 0),
-            NSLayoutConstraint.init(item: self, attribute: .height, relatedBy:.equal, toItem: view, attribute: .height, multiplier: 1, constant: 0),
         ])
     }
 

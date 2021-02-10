@@ -23,33 +23,26 @@ public class ArticleTableViewCell: UITableViewCell {
         articleContentView.dateLabel
     }
     
-    //let defaultCellHeight:CGFloat = 93
-    
     private var articleContentView: ArticleContentView!
     
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.articleContentView = ArticleContentView()
-        self.articleContentView.frame = self.contentView.bounds
         self.contentView.addSubview(self.articleContentView)
+        
+        contentView.autoresizingMask = .flexibleHeight
         
         articleContentView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.addConstraints([
-            NSLayoutConstraint.init(item: self, attribute: .leading, relatedBy: .equal, toItem: articleContentView, attribute: .leading, multiplier: 1, constant: 0),
-            NSLayoutConstraint.init(item: self, attribute: .trailing, relatedBy: .equal, toItem: articleContentView, attribute: .trailing, multiplier: 1, constant: 0),
-            NSLayoutConstraint.init(item: self, attribute: .top, relatedBy: .equal, toItem: articleContentView, attribute: .top, multiplier: 1, constant: 0),
-            NSLayoutConstraint.init(item: self, attribute: .bottom, relatedBy:.equal, toItem: articleContentView, attribute: .bottom, multiplier: 1, constant: 0),
-            NSLayoutConstraint.init(item: self, attribute: .width, relatedBy:.equal, toItem: articleContentView, attribute: .width, multiplier: 1, constant: 0),
-            NSLayoutConstraint.init(item: self, attribute: .height, relatedBy:.equal, toItem: articleContentView, attribute: .height, multiplier: 1, constant: 0),
+        contentView.addConstraints([
+            NSLayoutConstraint.init(item: self.contentView, attribute: .leading, relatedBy: .equal, toItem: articleContentView, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self.contentView, attribute: .trailing, relatedBy: .equal, toItem: articleContentView, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: articleContentView, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self.contentView, attribute: .bottom, relatedBy:.equal, toItem: articleContentView, attribute: .bottom, multiplier: 1, constant: 0),
         ])
         
-        titleLabel.text = ""
-        authorLabel.text = ""
-        dateLabel.text = ""
-        
-        articleImageView.image = UIImage(named: "no-image", in: Bundle(for: ArticleTableViewCell.self), compatibleWith: nil)
+        self.selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {

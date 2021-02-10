@@ -44,6 +44,13 @@ final public class DetailVideoContentView: UIView {
     
     private func configureView() {
         loadNib()
+        
+        self.titleLabel.text = ""
+        self.authorLabel.text = ""
+        self.dataLabel.text = ""
+        self.dateLabel.text = ""
+        
+        
     }
     
     private func loadNib() {
