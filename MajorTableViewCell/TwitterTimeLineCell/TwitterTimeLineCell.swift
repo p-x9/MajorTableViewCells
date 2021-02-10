@@ -10,27 +10,33 @@ import UIKit
 
 public class TwitterTimeLineCell: UITableViewCell {
     
-    @IBOutlet public var iconView: UIImageView!
-    @IBOutlet public var nameLabel: UILabel!
-    @IBOutlet public var idLabel: UILabel!
-    @IBOutlet public var tweetLabel: UILabel!
-    
-    var cellview: UITableViewCell!
-    let bundle = Bundle(for: VideoTableViewCell.self)
-    let defaultCellHeight:CGFloat = 76
-    
-    public var isDark:Bool!{
-        get{
-            return cellview?.backgroundColor! == .white ? false:true
-        }
-        set(flag){
-            cellview.backgroundColor = flag ? #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1) : .white
-            nameLabel.textColor = flag ? .white : .black
-            idLabel.textColor = flag ? .white : .black
-            tweetLabel.textColor = flag ? .white : .black
-            iconView.layer.borderColor = flag ? UIColor.white.cgColor : UIColor.black.cgColor
-        }
+    public var iconView: UIImageView{
+        tweetContentView.iconView
     }
+    public var nameLabel: UILabel{
+        tweetContentView.nameLabel
+    }
+    public var idLabel: UILabel{
+        tweetContentView.idLabel
+    }
+    public var tweetLabel: UILabel{
+        tweetContentView.tweetLabel
+    }
+    
+    private var tweetContentView: TwitterTimeLineContentView!
+    
+//    public var isDark:Bool!{
+//        get{
+//            return tweetContentView?.backgroundColor! == .white ? false:true
+//        }
+//        set(flag){
+//            tweetContentView.backgroundColor = flag ? #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1) : .white
+//            nameLabel.textColor = flag ? .white : .black
+//            idLabel.textColor = flag ? .white : .black
+//            tweetLabel.textColor = flag ? .white : .black
+//            iconView.layer.borderColor = flag ? UIColor.white.cgColor : UIColor.black.cgColor
+//        }
+//    }
     
     public var isRound:Bool{
         get{
@@ -41,44 +47,32 @@ public class TwitterTimeLineCell: UITableViewCell {
         }
     }
 
-    override public func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        initView()
-        tweetLabel.addObserver(self, forKeyPath: "text", options: [.new], context: nil)
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.tweetContentView = TwitterTimeLineContentView()
+        self.contentView.addSubview(self.tweetContentView)
+        
+        contentView.autoresizingMask = .flexibleHeight
+        
+        tweetContentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addConstraints([
+            NSLayoutConstraint.init(item: self.contentView, attribute: .leading, relatedBy: .equal, toItem: tweetContentView, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self.contentView, attribute: .trailing, relatedBy: .equal, toItem: tweetContentView, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: tweetContentView, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self.contentView, attribute: .bottom, relatedBy:.equal, toItem: tweetContentView, attribute: .bottom, multiplier: 1, constant: 0),
+        ])
+        
+        self.selectionStyle = .none
     }
     
-    private func initView(){
-        let nib = UINib(nibName: "TwitterTimeLineCell", bundle: bundle)
-        
-        cellview = nib.instantiate(withOwner: self, options: nil).first as? UITableViewCell
-        
-        cellview.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: cellview.contentView.frame.size.height)
-        
-        cellview.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth/*,UIView.AutoresizingMask.flexibleHeight*/]
-        
-        self.autoresizingMask = [UIView.AutoresizingMask.flexibleHeight]
-        
-        self.addSubview(cellview)
-        
-        
-        topAnchor.constraint(equalTo: cellview.topAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: cellview.bottomAnchor).isActive = true
-        leadingAnchor.constraint(equalTo: cellview.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: cellview.trailingAnchor).isActive = true
-        
-        updateConstraints()
-        
-        nameLabel.text = ""
-        idLabel.text = ""
-        tweetLabel.text = ""
-        
-        iconView.layer.borderWidth = 1
-        //fatalError()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func initDefaults(){
-        isDark = false
+//        isDark = false
         isRound = false
     }
     
@@ -116,26 +110,10 @@ public class TwitterTimeLineCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "text"{
-            
-            print(cellview.contentView.frame.size.height)
-            print(cellview.frame.size.height)
-            //tweetLabelのサイズを更新
-            tweetLabel.sizeToFit()
-            
-            //元の高さ+あるべきtweetLabelの高さ-元の高さ
-            let newCellHeight = defaultCellHeight + abs(tweetLabel.frame.size.height - 22)
-            
-            cellview.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: newCellHeight)
-        }
-    }
     
     private func clipIcon(flag:Bool){
         //角丸をつけるための設定。falseだと真四角のまま。
         self.iconView.clipsToBounds = flag
-        //角丸の半径
-        self.iconView.layer.cornerRadius = 3.0
         //widthの半分にすると、ちょうど真円になる
         self.iconView.layer.cornerRadius = self.iconView.frame.size.width / 2.0
     }

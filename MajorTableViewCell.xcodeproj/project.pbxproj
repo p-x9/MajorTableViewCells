@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		421CB0CF25D3FFE5001CA591 /* ArticleContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421CB0CE25D3FFE5001CA591 /* ArticleContentView.xib */; };
 		421CB0D425D40378001CA591 /* ArticleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CB0D325D40378001CA591 /* ArticleContentView.swift */; };
+		421CB0E325D4393E001CA591 /* TwitterTimeLineContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421CB0E225D4393E001CA591 /* TwitterTimeLineContentView.xib */; };
+		421CB0E825D4394C001CA591 /* TwitterTimeLineContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CB0E725D4394C001CA591 /* TwitterTimeLineContentView.swift */; };
 		422B34702349D564001BC553 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B346E2349D564001BC553 /* FormTableViewCell.swift */; };
 		422B3474234A5C29001BC553 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B3473234A5C29001BC553 /* MemoTableViewCell.swift */; };
 		4244908025BF171500F2CD71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4244907F25BF171500F2CD71 /* AppDelegate.swift */; };
@@ -24,7 +26,6 @@
 		4245007B23407FCA00023D48 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245007923407FCA00023D48 /* VideoTableViewCell.xib */; };
 		424501162340E75F00023D48 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424501152340E75F00023D48 /* Media.xcassets */; };
 		4245011A2340ECD300023D48 /* TwitterTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424501182340ECD300023D48 /* TwitterTimeLineCell.swift */; };
-		4245011B2340ECD300023D48 /* TwitterTimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424501192340ECD300023D48 /* TwitterTimeLineCell.xib */; };
 		4245012123416A4A00023D48 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245011F23416A4A00023D48 /* ArticleTableViewCell.swift */; };
 		4245012623419C6B00023D48 /* ColorTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245012423419C6B00023D48 /* ColorTagTableViewCell.swift */; };
 		4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */; };
@@ -77,6 +78,8 @@
 /* Begin PBXFileReference section */
 		421CB0CE25D3FFE5001CA591 /* ArticleContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleContentView.xib; sourceTree = "<group>"; };
 		421CB0D325D40378001CA591 /* ArticleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentView.swift; sourceTree = "<group>"; };
+		421CB0E225D4393E001CA591 /* TwitterTimeLineContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterTimeLineContentView.xib; sourceTree = "<group>"; };
+		421CB0E725D4394C001CA591 /* TwitterTimeLineContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTimeLineContentView.swift; sourceTree = "<group>"; };
 		422B346E2349D564001BC553 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		422B3473234A5C29001BC553 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 		4244907D25BF171500F2CD71 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +103,6 @@
 		4245007923407FCA00023D48 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		424501152340E75F00023D48 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		424501182340ECD300023D48 /* TwitterTimeLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTimeLineCell.swift; sourceTree = "<group>"; };
-		424501192340ECD300023D48 /* TwitterTimeLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterTimeLineCell.xib; sourceTree = "<group>"; };
 		4245011F23416A4A00023D48 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		4245012423419C6B00023D48 /* ColorTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTagTableViewCell.swift; sourceTree = "<group>"; };
 		4245012523419C6B00023D48 /* ColorTagTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTagTableViewCell.xib; sourceTree = "<group>"; };
@@ -245,7 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				424501182340ECD300023D48 /* TwitterTimeLineCell.swift */,
-				424501192340ECD300023D48 /* TwitterTimeLineCell.xib */,
+				421CB0E225D4393E001CA591 /* TwitterTimeLineContentView.xib */,
+				421CB0E725D4394C001CA591 /* TwitterTimeLineContentView.swift */,
 			);
 			path = TwitterTimeLineCell;
 			sourceTree = "<group>";
@@ -461,7 +464,7 @@
 				421CB0CF25D3FFE5001CA591 /* ArticleContentView.xib in Resources */,
 				426B67B525D1885D00C1FC2B /* DetailVideoContentView.xib in Resources */,
 				424501162340E75F00023D48 /* Media.xcassets in Resources */,
-				4245011B2340ECD300023D48 /* TwitterTimeLineCell.xib in Resources */,
+				421CB0E325D4393E001CA591 /* TwitterTimeLineContentView.xib in Resources */,
 				4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */,
 				4245007B23407FCA00023D48 /* VideoTableViewCell.xib in Resources */,
 			);
@@ -509,6 +512,7 @@
 				4245012123416A4A00023D48 /* ArticleTableViewCell.swift in Sources */,
 				421CB0D425D40378001CA591 /* ArticleContentView.swift in Sources */,
 				4245007A23407FCA00023D48 /* VideoTableViewCell.swift in Sources */,
+				421CB0E825D4394C001CA591 /* TwitterTimeLineContentView.swift in Sources */,
 				422B34702349D564001BC553 /* FormTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         self.tableView.register(FormTableViewCell.self, forCellReuseIdentifier: "\(FormTableViewCell.self)")
         self.tableView.register(DetailVideoTableViewCell.self, forCellReuseIdentifier: "\(DetailVideoTableViewCell.self)")
         self.tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "\(ArticleTableViewCell.self)")
+        self.tableView.register(TwitterTimeLineCell.self, forCellReuseIdentifier: "\(TwitterTimeLineCell.self)")
     }
 
 
@@ -33,7 +34,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 5
+            return 6
         default:
             return 0
         }
@@ -85,6 +86,14 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             cell.titleLabel.text = "[Swift] RxSwift入門-主なUIアーキテクチャの説明"
             cell.authorLabel.text = "author"
             cell.dateLabel.text = "\(Date())"
+            return cell
+        case (0,5):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(TwitterTimeLineCell.self)", for: indexPath) as! TwitterTimeLineCell
+            cell.iconView.image = .actions
+            cell.idLabel.text = "@NSA"
+            cell.nameLabel.text = "NSA"
+            cell.tweetLabel.text = "A software reverse engineering (SRE) suite of tools developed by NSA's Research Directorate in support of the Cybersecurity mission"
+            cell.isRound = true
             return cell
         default:
             return UITableViewCell()
