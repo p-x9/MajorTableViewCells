@@ -8,53 +8,55 @@
 
 import UIKit
 
-class ArticleTableViewCell: UITableViewCell {
+public class ArticleTableViewCell: UITableViewCell {
     
-    @IBOutlet var articleImageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var detailLabel: UILabel!
-    @IBOutlet var authorLabel: UILabel!
-    
-    var cellview: UITableViewCell!
-    let bundle = Bundle(for: VideoTableViewCell.self)
-    let defaultCellHeight:CGFloat = 93
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        initView()
-        titleLabel.addObserver(self, forKeyPath: "text", options: [.new], context: nil)
+    public var articleImageView: UIImageView{
+        articleContentView.imageView
+    }
+    public var titleLabel: UILabel{
+        articleContentView.titleLabel
+    }
+    public var authorLabel: UILabel{
+        articleContentView.authorLabel
+    }
+    public var dateLabel: UILabel{
+        articleContentView.dateLabel
     }
     
-    private func initView(){
-        let nib = UINib(nibName: "ArticleTableViewCell", bundle: bundle)
+    //let defaultCellHeight:CGFloat = 93
+    
+    private var articleContentView: ArticleContentView!
+    
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        cellview = nib.instantiate(withOwner: self, options: nil).first as? UITableViewCell
+        self.articleContentView = ArticleContentView()
+        self.articleContentView.frame = self.contentView.bounds
+        self.contentView.addSubview(self.articleContentView)
         
-        cellview.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: cellview.contentView.frame.size.height)
+        articleContentView.translatesAutoresizingMaskIntoConstraints = false
         
-        cellview.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth/*,UIView.AutoresizingMask.flexibleHeight*/]
-        
-        self.autoresizingMask = [UIView.AutoresizingMask.flexibleHeight]
-        
-        self.addSubview(cellview)
-        
-        
-        topAnchor.constraint(equalTo: cellview.topAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: cellview.bottomAnchor).isActive = true
-        leadingAnchor.constraint(equalTo: cellview.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: cellview.trailingAnchor).isActive = true
-        
-        updateConstraints()
+        self.addConstraints([
+            NSLayoutConstraint.init(item: self, attribute: .leading, relatedBy: .equal, toItem: articleContentView, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .trailing, relatedBy: .equal, toItem: articleContentView, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .top, relatedBy: .equal, toItem: articleContentView, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .bottom, relatedBy:.equal, toItem: articleContentView, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .width, relatedBy:.equal, toItem: articleContentView, attribute: .width, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self, attribute: .height, relatedBy:.equal, toItem: articleContentView, attribute: .height, multiplier: 1, constant: 0),
+        ])
         
         titleLabel.text = ""
-        detailLabel.text = ""
         authorLabel.text = ""
+        dateLabel.text = ""
         
-        articleImageView.image = UIImage(named: "no-image", in: bundle, compatibleWith: nil)
-        
-        //fatalError()
+        articleImageView.image = UIImage(named: "no-image", in: Bundle(for: ArticleTableViewCell.self), compatibleWith: nil)
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+
     func setArticleImage(path:String){
         articleImageView.image = getImage(path: path)
     }
@@ -80,21 +82,8 @@ class ArticleTableViewCell: UITableViewCell {
        }
        return nil
     }
-    
-    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "text"{
-            
-            //tweetLabelのサイズを更新
-            titleLabel.sizeToFit()
-            
-            //元の高さ+あるべきtweetLabelの高さ-元の高さ
-            let newCellHeight = defaultCellHeight + abs(titleLabel.frame.size.height - 20.5)
-            
-            cellview.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: newCellHeight)
-        }
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

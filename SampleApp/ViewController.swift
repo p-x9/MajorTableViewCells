@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         self.tableView.register(MemoTableViewCell.self, forCellReuseIdentifier: "\(MemoTableViewCell.self)")
         self.tableView.register(FormTableViewCell.self, forCellReuseIdentifier: "\(FormTableViewCell.self)")
         self.tableView.register(DetailVideoTableViewCell.self, forCellReuseIdentifier: "\(DetailVideoTableViewCell.self)")
+        self.tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "\(ArticleTableViewCell.self)")
     }
 
 
@@ -32,7 +33,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 4
+            return 5
         default:
             return 0
         }
@@ -77,7 +78,13 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             cell.dateLabel.text = "date"
             cell.lengthLabel.text = "length"
             cell.thumbnailView.image = .actions
-            
+            return cell
+        case (0,4):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(ArticleTableViewCell.self)", for: indexPath) as! ArticleTableViewCell
+            cell.articleImageView.image = .add
+            cell.titleLabel.text = "[Swift] RxSwift入門-主なUIアーキテクチャの説明"
+            cell.authorLabel.text = "author"
+            cell.dateLabel.text = "\(Date())"
             return cell
         default:
             return UITableViewCell()
@@ -89,6 +96,8 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         case (0,1):
             return 120
         case (0,3):
+            return 80
+        case (0,4):
             return 80
         default:
             tableView.estimatedRowHeight = 60
