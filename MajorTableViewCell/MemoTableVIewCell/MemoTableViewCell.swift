@@ -9,14 +9,14 @@
 import UIKit
 
 public class MemoTableViewCell: UITableViewCell {
-    public let memoView: UITextView
+    public let memoView: PlaceHolderTextView
     private let toolBar:UIToolbar
     
     public var editingStartHandler:(()->Void)?
     public var memoChangedHandler:((String)->Void)?
     
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        self.memoView = UITextView()
+        self.memoView = PlaceHolderTextView()
         self.toolBar = UIToolbar(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(memoView)
