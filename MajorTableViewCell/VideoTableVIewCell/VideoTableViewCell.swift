@@ -8,45 +8,42 @@
 
 import UIKit
 
-//@IBDesignable
 public class VideoTableViewCell: UITableViewCell {
     
-    @IBOutlet public var thumbnailView: UIImageView!
-    @IBOutlet public var titleLabel: UILabel!
-    @IBOutlet public var detailLabel: UILabel!
-    //var 
-    
-    
-    var cellview: UIView!
-    let bundle = Bundle(for: VideoTableViewCell.self)
-    
-    /*override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initView()
+    public var thumbnailView: UIImageView{
+        videoContentView.thumbnailView
+    }
+    public var titleLabel: UILabel{
+        videoContentView.titleLabel
+    }
+    public var detailLabel: UILabel{
+        videoContentView.detailLabel
     }
     
+    private var videoContentView: VideoContentView!
+    
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.videoContentView = VideoContentView()
+        self.contentView.addSubview(self.videoContentView)
+        
+        contentView.autoresizingMask = .flexibleHeight
+        
+        videoContentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addConstraints([
+            NSLayoutConstraint.init(item: self.contentView, attribute: .leading, relatedBy: .equal, toItem: videoContentView, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self.contentView, attribute: .trailing, relatedBy: .equal, toItem: videoContentView, attribute: .trailing, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: videoContentView, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint.init(item: self.contentView, attribute: .bottom, relatedBy:.equal, toItem: videoContentView, attribute: .bottom, multiplier: 1, constant: 0),
+        ])
+        
+        self.selectionStyle = .none
+    }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        initView()
         fatalError("init(coder:) has not been implemented")
-    }*/
-    
-    override public func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        initView()
-    }
-    
-    private func initView(){
-        let nib = UINib(nibName: "VideoTableViewCell", bundle: bundle)
-        
-        cellview = nib.instantiate(withOwner: self, options: nil).first as? UIView
-        addSubview(cellview)
-        cellview.point(inside: CGPoint(x: 0, y: 0), with: nil)
-        titleLabel.text = ""
-        detailLabel.text = ""
-        thumbnailView.image = UIImage(named: "no-image", in: bundle, compatibleWith: nil)
     }
     
     func setThumbnail(path:String){

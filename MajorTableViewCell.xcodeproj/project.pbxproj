@@ -12,6 +12,8 @@
 		421CB0E325D4393E001CA591 /* TwitterTimeLineContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421CB0E225D4393E001CA591 /* TwitterTimeLineContentView.xib */; };
 		421CB0E825D4394C001CA591 /* TwitterTimeLineContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CB0E725D4394C001CA591 /* TwitterTimeLineContentView.swift */; };
 		421CB0F125D444B4001CA591 /* UITextView+placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CB0F025D444B4001CA591 /* UITextView+placeholder.swift */; };
+		421CB0F625D4F2AD001CA591 /* VideoContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421CB0F525D4F2AD001CA591 /* VideoContentView.xib */; };
+		421CB0FB25D4F2C8001CA591 /* VideoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CB0FA25D4F2C8001CA591 /* VideoContentView.swift */; };
 		422B34702349D564001BC553 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B346E2349D564001BC553 /* FormTableViewCell.swift */; };
 		422B3474234A5C29001BC553 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B3473234A5C29001BC553 /* MemoTableViewCell.swift */; };
 		4244908025BF171500F2CD71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4244907F25BF171500F2CD71 /* AppDelegate.swift */; };
@@ -24,7 +26,6 @@
 		424490A225BF171700F2CD71 /* SampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424490A125BF171700F2CD71 /* SampleAppUITests.swift */; };
 		42450070234073A400023D48 /* MajorTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4245006E234073A400023D48 /* MajorTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4245007A23407FCA00023D48 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245007823407FCA00023D48 /* VideoTableViewCell.swift */; };
-		4245007B23407FCA00023D48 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245007923407FCA00023D48 /* VideoTableViewCell.xib */; };
 		424501162340E75F00023D48 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424501152340E75F00023D48 /* Media.xcassets */; };
 		4245011A2340ECD300023D48 /* TwitterTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424501182340ECD300023D48 /* TwitterTimeLineCell.swift */; };
 		4245012123416A4A00023D48 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245011F23416A4A00023D48 /* ArticleTableViewCell.swift */; };
@@ -82,6 +83,8 @@
 		421CB0E225D4393E001CA591 /* TwitterTimeLineContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterTimeLineContentView.xib; sourceTree = "<group>"; };
 		421CB0E725D4394C001CA591 /* TwitterTimeLineContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTimeLineContentView.swift; sourceTree = "<group>"; };
 		421CB0F025D444B4001CA591 /* UITextView+placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+placeholder.swift"; sourceTree = "<group>"; };
+		421CB0F525D4F2AD001CA591 /* VideoContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoContentView.xib; sourceTree = "<group>"; };
+		421CB0FA25D4F2C8001CA591 /* VideoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContentView.swift; sourceTree = "<group>"; };
 		422B346E2349D564001BC553 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		422B3473234A5C29001BC553 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 		4244907D25BF171500F2CD71 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +105,6 @@
 		4245006E234073A400023D48 /* MajorTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MajorTableViewCell.h; sourceTree = "<group>"; };
 		4245006F234073A400023D48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4245007823407FCA00023D48 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
-		4245007923407FCA00023D48 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		424501152340E75F00023D48 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		424501182340ECD300023D48 /* TwitterTimeLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTimeLineCell.swift; sourceTree = "<group>"; };
 		4245011F23416A4A00023D48 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
@@ -241,7 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				4245007823407FCA00023D48 /* VideoTableViewCell.swift */,
-				4245007923407FCA00023D48 /* VideoTableViewCell.xib */,
+				421CB0F525D4F2AD001CA591 /* VideoContentView.xib */,
+				421CB0FA25D4F2C8001CA591 /* VideoContentView.swift */,
 			);
 			path = VideoTableVIewCell;
 			sourceTree = "<group>";
@@ -464,12 +467,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				421CB0F625D4F2AD001CA591 /* VideoContentView.xib in Resources */,
 				421CB0CF25D3FFE5001CA591 /* ArticleContentView.xib in Resources */,
 				426B67B525D1885D00C1FC2B /* DetailVideoContentView.xib in Resources */,
 				424501162340E75F00023D48 /* Media.xcassets in Resources */,
 				421CB0E325D4393E001CA591 /* TwitterTimeLineContentView.xib in Resources */,
 				4245012723419C6B00023D48 /* ColorTagTableViewCell.xib in Resources */,
-				4245007B23407FCA00023D48 /* VideoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +514,7 @@
 				42B6FE7F2348E16A0000EA2E /* DetailVideoTableViewCell.swift in Sources */,
 				422B3474234A5C29001BC553 /* MemoTableViewCell.swift in Sources */,
 				426B67AF25D1883800C1FC2B /* DetailVideoContentView.swift in Sources */,
+				421CB0FB25D4F2C8001CA591 /* VideoContentView.swift in Sources */,
 				4245012B2341A3C600023D48 /* SwitchTableViewCell.swift in Sources */,
 				4245012123416A4A00023D48 /* ArticleTableViewCell.swift in Sources */,
 				421CB0D425D40378001CA591 /* ArticleContentView.swift in Sources */,

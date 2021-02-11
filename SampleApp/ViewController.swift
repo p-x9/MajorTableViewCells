@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         self.tableView.register(DetailVideoTableViewCell.self, forCellReuseIdentifier: "\(DetailVideoTableViewCell.self)")
         self.tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "\(ArticleTableViewCell.self)")
         self.tableView.register(TwitterTimeLineCell.self, forCellReuseIdentifier: "\(TwitterTimeLineCell.self)")
+        self.tableView.register(VideoTableViewCell.self, forCellReuseIdentifier: "\(VideoTableViewCell.self)")
     }
 
 
@@ -34,7 +35,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 6
+            return 7
         default:
             return 0
         }
@@ -97,6 +98,12 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             cell.nameLabel.text = "NSA"
             cell.tweetLabel.text = "A software reverse engineering (SRE) suite of tools developed by NSA's Research Directorate in support of the Cybersecurity mission"
             cell.isRound = true
+            return cell
+        case (0,6):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(VideoTableViewCell.self)", for: indexPath) as! VideoTableViewCell
+            cell.titleLabel.text = "Apple Event — October 13"
+            cell.detailLabel.text = "This video is created by Apple on 2020/10/14"
+            cell.thumbnailView.image = UIImage.init(named: "videoThumbnail")
             return cell
         default:
             return UITableViewCell()
